@@ -8,11 +8,7 @@ Search terms like "hitting bank targets" or "pulling in deposits" on Xiaohongshu
 
 The users leaving these comments include depositors with cash on hand, and no shortage of money brokers who trade in deposits for a living. This reporter sent a direct message to one such user on Xiaohongshu, who said he "has personal funds and partners up as an intermediary." At the end of the second quarter, he said, his team was trading deposits at a volume of "roughly 500 million yuan per person."
 
-Mr. Zhang, a money broker, explained how it works: branch managers at some banks quote him a price and hand him the interest subsidy, and he then passes the bank's requirement on to depositors. The depositor puts the money into an account in their own name, withdraws it after the agreed period, and collects the subsidy.
-
-> "It's very safe — the money just spends a night in your own card."
-
-Between July 1 and midday on July 6, he had already transferred more than 10,000 yuan in subsidies to depositors via WeChat, ranging from 500 to 3,000 yuan each.
+Mr. Zhang, a money broker, explained how it works: branch managers at some banks quote him a price and hand him the interest subsidy, and he then passes the bank's requirement on to depositors. The depositor puts the money into an account in their own name, withdraws it after the agreed period, and collects the subsidy. "It's very safe — the money just spends a night in your own card." Between July 1 and midday on July 6, he had already transferred more than 10,000 yuan in subsidies to depositors via WeChat, ranging from 500 to 3,000 yuan each.
 
 Mr. Li, another broker, told this reporter that the "market rate" for the subsidy climbed above "wan-20" at the end of the second quarter, and sits between "wan-6" and "wan-7" at the close of other months. Bank employees who want to work with him pay an additional handling fee of around "wan-1."
 
@@ -28,9 +24,7 @@ Experts point out that compared with the old model of offline canvassing, moving
 
 Ji Ligang, executive dean of Fudan University's Institute of Chinese Financial Rule of Law, said banking services are "public" in character: a loss of liquidity can easily destabilise finance and the wider economy, which is why banks' business conduct and the professional qualifications of their staff are subject to "strong regulation" under law and industry self-discipline. Whether it is asking strangers for help on social media, buying promotional services on an e-commerce platform, or taking deposits through money brokers, he said, these various online methods of hitting targets are all illegal or in breach of regulations.
 
-Article 12 of the E-Commerce Law of the People's Republic of China provides that "where an e-commerce operator engages in business activities for which relevant administrative permission is required by law, it shall obtain such administrative permission in accordance with the law."
-
-> "Analysed through the lens of commercial law, so-called 'completing bank tasks on your behalf' is in substance an e-commerce platform conducting banking business and forming a shadow bank. E-commerce platforms hold no financial licence and cannot conduct banking business."
+Article 12 of the E-Commerce Law of the People's Republic of China provides that "where an e-commerce operator engages in business activities for which relevant administrative permission is required by law, it shall obtain such administrative permission in accordance with the law." "Analysed through the lens of commercial law, so-called 'completing bank tasks on your behalf' is in substance an e-commerce platform conducting banking business and forming a shadow bank. E-commerce platforms hold no financial licence and cannot conduct banking business," Ji Ligang said.
 
 High-interest deposit solicitation also encourages destructive competition. Ye Xiaohua, senior partner at Beijing Jingsh Law Firm, said: "Through the internet, money brokers mobilise idle funds sitting in depositors' hands, and bring into the open a practice that used to live in a grey zone." In Ji Ligang's view, bank employees subsidising deposits online raises banks' funding costs through the fees paid to brokers, while also disrupting order in the deposit market and constituting unfair competition.
 
@@ -54,9 +48,7 @@ Incomplete regulatory mechanisms and insufficient penalties are another importan
 
 As for social media and e-commerce platforms, when they offer finance-related products and services they should comply with regulators' rules, so as not to encourage bad practice.
 
-> "At the moment, faced with a relatively new phenomenon like the publishing of non-compliant financial information, platforms neither fully appreciate the need for control nor have much experience handling it, and so adopt a posture of tacit consent."
-
-Liu Xin recommends that social media platforms take effective measures to promptly block, delete or remove financial content identified as non-compliant, so that money brokers cannot use them for unlawful activity; e-commerce platforms, meanwhile, should properly review and vet the services their shops offer, and provide compliance guidance and supervision over how those shops operate.
+"At the moment, faced with a relatively new phenomenon like the publishing of non-compliant financial information, platforms neither fully appreciate the need for control nor have much experience handling it, and so adopt a posture of tacit consent." Liu Xin recommends that social media platforms take effective measures to promptly block, delete or remove financial content identified as non-compliant, so that money brokers cannot use them for unlawful activity; e-commerce platforms, meanwhile, should properly review and vet the services their shops offer, and provide compliance guidance and supervision over how those shops operate.
 
 ---
 
