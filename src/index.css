@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Serif+SC:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+/* 与个人主页同一套视觉：纸质米白 + 墨色 + 薰衣草紫点缀，衬线字体为主 */
+@theme {
+  --color-paper: #fdfcf8;
+  --color-ink: #1c1a17;
+  --color-ink-soft: #57534e;
+  --color-ink-faint: #a89fc0;
+  --color-accent: #5f4b8b;
+  --color-accent-soft: #8674ad;
+  --color-line: #e6e2ef;
+  --color-surface: #f3f0fa;
+  --color-surface-deep: #eae5f5;
+  --font-serif: "EB Garamond", "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --font-sans: "Helvetica Neue", "PingFang SC", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 细滚动条，低调不抢戏 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cfc8e0;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b3a8cf;
+}
+
+/* 淡入动画 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+/* ---------------------------------------------------------------
+   长文正文排版：Markdown 渲染结果统一在 .article-body 里取样式
+   中英文共用，仅行距和首行缩进随 lang 微调
+   --------------------------------------------------------------- */
+.article-body {
+  color: var(--color-ink-soft);
+  font-size: 1.0625rem;
+  line-height: 1.9;
+}
+
+.article-body > * + * {
+  margin-top: 1.4em;
+}
+
+.article-body h2 {
+  color: var(--color-ink);
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-top: 2.6em;
+}
+
+.article-body h3 {
+  color: var(--color-ink);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-top: 2.2em;
+}
+
+.article-body h2 + *,
+.article-body h3 + * {
+  margin-top: 0.9em;
+}
+
+.article-body strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.article-body em {
+  font-style: italic;
+}
+
+.article-body a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.article-body a:hover {
+  color: var(--color-accent-soft);
+}
+
+/* 引述段落：左侧一道细线，不用大引号 */
+.article-body blockquote {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0.2em 0 0.2em 1.25em;
+  border-left: 2px solid var(--color-line);
+  color: var(--color-ink-soft);
+  font-style: italic;
+}
+
+.article-body blockquote > * + * {
+  margin-top: 0.8em;
+}
+
+.article-body ul,
+.article-body ol {
+  padding-left: 1.4em;
+}
+
+.article-body li + li {
+  margin-top: 0.5em;
+}
+
+.article-body ul {
+  list-style: disc;
+}
+
+.article-body ol {
+  list-style: decimal;
+}
+
+/* 配图：带圆角，图注居中小字 */
+.article-body img {
+  width: 100%;
+  border-radius: 0.75rem;
+}
+
+.article-body figure > figcaption,
+.article-body img + em {
+  display: block;
+  margin-top: 0.6em;
+  color: var(--color-ink-faint);
+  font-size: 0.8125rem;
+  text-align: center;
+}
+
+/* 分隔线：用于正文中的星号分节 */
+.article-body hr {
+  margin: 2.8em auto;
+  width: 4rem;
+  border: none;
+  border-top: 1px solid var(--color-line);
+}
+
+/* 中文正文稍微收紧字距，英文保持默认 */
+.article-body:lang(zh) {
+  text-align: justify;
+}
