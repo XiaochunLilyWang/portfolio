@@ -162,6 +162,25 @@ body {
   text-align: center;
 }
 
+/* 受访者资料块：人物访谈里"年龄/身份/使用时长"那种信息卡
+   在 Markdown 里写成 <div class="profile-card">…</div> */
+.article-body .profile-card {
+  margin-top: 1.2em;
+  padding: 1.1em 1.3em;
+  background: var(--color-surface);
+  border-radius: 0.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.8;
+}
+
+.article-body .profile-card p {
+  margin: 0;
+}
+
+.article-body .profile-card strong {
+  font-size: 1.0625rem;
+}
+
 /* 分隔线：用于正文中的星号分节 */
 .article-body hr {
   margin: 2.8em auto;

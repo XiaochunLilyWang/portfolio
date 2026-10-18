@@ -11,7 +11,8 @@ export default function Markdown({
   lang: string
 }) {
   const html = useMemo(
-    () => marked.parse(source, { async: false, breaks: false, gfm: true }),
+    // breaks: true —— 正文每段都写成单行，所以换行一律是刻意的（受访者资料块等）
+    () => marked.parse(source, { async: false, breaks: true, gfm: true }),
     [source],
   )
 

@@ -28,6 +28,66 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "whos-on-xingye",
+    title: {
+      en: "Who's on Xingye?",
+      zh: "谁在使用星野？",
+    },
+    outlet: {
+      en: "NewNewThing (CBN)",
+      zh: "新皮层 NewNewThing（第一财经）",
+    },
+    date: "2024-12-18",
+    role: { en: "Contributing reporter", zh: "参与采访写作" },
+    summary: {
+      en: "MiniMax's AI companion app has the stickiest users of any product in its category in China. Four of them — aged 15 to 24 — describe the agents they built, the attachments they formed, and what happened when the model changed underneath them.",
+      zh: "MiniMax 旗下的情感陪伴 AI 是国内同类产品中用户黏性最高的一个。四位 15 到 24 岁的用户讲述了他们亲手「捏」出的智能体、与之建立的感情，以及模型在他们脚下悄悄改变之后发生的事。",
+    },
+    cover: "/portfolio/images/xingye-users.png",
+    originalLink: "https://mp.weixin.qq.com/s/L8oUMwBht7GScn6z43ItVA",
+    topics: ["AI", "Human–AI Relationships", "Youth Culture"],
+  },
+  {
+    slug: "unmasking-ai-faces",
+    title: {
+      en: "Unmasking the AI Face",
+      zh: "揭穿「AI 脸」",
+    },
+    outlet: {
+      en: "CBN Weekly",
+      zh: "第一财经杂志",
+    },
+    date: "2024-11-01",
+    role: { en: "Sole author", zh: "独立主笔" },
+    summary: {
+      en: "Deepfake fraud grew 3,000% in a single year. Inside the labs and companies trying to fight AI with AI — and why every defence they build is, by design, one step behind the attack.",
+      zh: "深度伪造欺诈一年增长 3000%。走进那些试图「用 AI 打败 AI」的实验室与公司——以及为什么他们造出的每一道防线，在结构上都注定慢攻击一步。",
+    },
+    cover: "/portfolio/images/unmasking-ai-faces.png",
+    originalLink: "https://www.cbnweek.com/article_detail/32100",
+    topics: ["AI", "Security", "Technology"],
+  },
+  {
+    slug: "medical-companions",
+    title: {
+      en: "When Companionship Becomes a Business: The Hopes and Worries of China's \"Temporary Family\"",
+      zh: "当陪诊成为生意：「临时家人」们的探索与忧虑",
+    },
+    outlet: {
+      en: "Tide News",
+      zh: "潮新闻",
+    },
+    date: "2024-02-21",
+    role: { en: "Sole author", zh: "独立主笔" },
+    summary: {
+      en: "More than a thousand companies now sell the service of accompanying strangers to hospital. Following the people doing the work through Shanghai's wards reveals a trade with real demand, no qualifications, no pricing standard — and no clear future.",
+      zh: "全国已有一千多家公司在做「陪别人看病」这门生意。跟着陪诊师穿行上海各大医院可以看到：需求是真的，但这个行业没有资格认证、没有收费标准，也还没有明确的未来。",
+    },
+    cover: "/portfolio/images/peizhen-shengyi.png",
+    originalLink: "https://tidenews.com.cn/news.html?id=2719325",
+    topics: ["Labour", "Healthcare", "Ageing"],
+  },
+  {
     slug: "bank-deposit-grey-chain",
     title: {
       en: "Bank Staff Shopping for Deposits: A Grey Industry Chain on Social and E-Commerce Platforms",
