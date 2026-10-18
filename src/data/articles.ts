@@ -68,6 +68,54 @@ export const articles: Article[] = [
     topics: ["AI", "Interview", "Venture Capital"],
   },
   {
+    slug: "why-foldables",
+    title: { en: "Why Foldables?", zh: "为什么是折叠屏？" },
+    outlet: { en: "CBN Weekly", zh: "第一财经杂志" },
+    date: "2026-09-10",
+    role: { en: "Lead writer", zh: "主笔" },
+    summary: {
+      en: "Huawei, Xiaomi and Apple each launched a foldable flagship within 72 hours, and all three gave it the place in the lineup a slab flagship used to hold. Why memory prices, on-device AI and the fight over the AI entry point all point to the same device.",
+      zh: "72 小时内华为、小米、苹果接连发布折叠旗舰，三家都把过去属于直板旗舰的位置给了它。存储涨价、端侧 AI 和对 AI 入口的争夺，为什么都指向同一款设备。",
+    },
+    cover: "/portfolio/images/why-foldables.png",
+    originalLink: "https://mp.weixin.qq.com/s/-fGdHtHCir0PJ-miw9Ox0w",
+    topics: ["AI", "Hardware", "Consumer Tech"],
+  },
+  {
+    slug: "ai-out-of-control",
+    title: {
+      en: "Is AI Really Out of Control — or Is This Just a Scare?",
+      zh: "AI 真的失控了？还是这只是一种恐吓？",
+    },
+    outlet: { en: "CBN Weekly", zh: "第一财经杂志" },
+    date: "2026-09-09",
+    role: { en: "Lead writer", zh: "主笔" },
+    summary: {
+      en: "Three days after calling its new model the most aligned ever built, OpenAI's chief scientist published an essay warning that nobody has solved alignment. A close reading of what that essay admits — and of the two breakouts OpenAI's own agents had already carried out.",
+      zh: "在把新模型称作「最对齐的模型」三天后，OpenAI 首席科学家发文警告没有一家实验室解决了对齐问题。细读这篇文章承认了什么——以及 OpenAI 自家智能体已经完成的两次越狱。",
+    },
+    cover: "/portfolio/images/ai-out-of-control.png",
+    originalLink: "https://mp.weixin.qq.com/s/GdJL8418A4tQehJlrn8P5g",
+    topics: ["AI", "AI Safety", "Alignment"],
+  },
+  {
+    slug: "ai-hardware-six-trends",
+    title: {
+      en: "Six Trends from a Year of Nearly 40 AI Devices",
+      zh: "盘点了过去一年近 40 款 AI 硬件后，这是我们总结的 6 条新趋势",
+    },
+    outlet: { en: "CBN Weekly", zh: "第一财经杂志" },
+    date: "2026-04-03",
+    role: { en: "Lead writer", zh: "主笔" },
+    summary: {
+      en: "Consumer AI hardware stopped trying to end the smartphone and started filling its dead zones. Six shifts drawn from a year of glasses, earbuds, pendants, rings and recording cards — ending with a business model that sells the service, not the device.",
+      zh: "消费级 AI 硬件不再执着于终结智能手机，转而去填手机的真空地带。从一年里的眼镜、耳机、挂坠、戒指和录音卡中总结的 6 条变化——最后落到一个卖服务而不是卖机器的商业模式上。",
+    },
+    cover: "/portfolio/images/ai-hardware-six-trends.png",
+    originalLink: "https://mp.weixin.qq.com/s/srwvM80NxmRWirifkxJHcg",
+    topics: ["AI", "Hardware", "Consumer Tech"],
+  },
+  {
     slug: "whos-on-xingye",
     title: {
       en: "Who's on Xingye?",
@@ -149,17 +197,31 @@ export const articles: Article[] = [
   },
 ]
 
-/* ---- 正文加载：把 content/ 下的 Markdown 打包进来 ---- */
+/* ---- 正文加载 ----
+   不用 eager：每篇正文各自打成一个 chunk，点进文章才下载。
+   否则所有文章的全文都会塞进主 bundle，列表页首屏会被越来越多的
+   正文拖慢（文章多了以后差别很大）。 */
 
 const bodies = import.meta.glob("../content/**/*.md", {
   query: "?raw",
   import: "default",
-  eager: true,
-}) as Record<string, string>
+}) as Record<string, () => Promise<string>>
 
-/** 取某篇文章某个语言的正文，没有则返回 null */
-export function getBody(slug: string, lang: Lang): string | null {
-  const raw = bodies[`../content/${slug}/${lang}.md`]
+const key = (slug: string, lang: Lang) => `../content/${slug}/${lang}.md`
+
+/** 这篇文章这个语言的正文是否存在（不触发下载） */
+export function hasBody(slug: string, lang: Lang): boolean {
+  return key(slug, lang) in bodies
+}
+
+/** 下载并返回正文；没有这个文件则返回 null */
+export async function loadBody(
+  slug: string,
+  lang: Lang,
+): Promise<string | null> {
+  const load = bodies[key(slug, lang)]
+  if (!load) return null
+  const raw = await load()
   return raw && raw.trim() ? raw : null
 }
 

@@ -1,11 +1,29 @@
+import { useEffect, useState } from "react"
 import { useLanguage } from "../i18n/LanguageContext"
-import { findArticle, getBody, formatDate } from "../data/articles"
+import { findArticle, hasBody, loadBody, formatDate } from "../data/articles"
 import { navigate } from "../router"
 import Markdown from "./Markdown"
 
 export default function ArticlePage({ slug }: { slug: string }) {
   const { t, lang, setLang } = useLanguage()
   const article = findArticle(slug)
+
+  // 正文按需下载：切语言或换文章时重新取
+  const [body, setBody] = useState<string | null>(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    let cancelled = false
+    setLoading(true)
+    loadBody(slug, lang).then((text) => {
+      if (cancelled) return
+      setBody(text)
+      setLoading(false)
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [slug, lang])
 
   // slug 不存在（比如手改了地址栏）就退回列表
   if (!article) {
@@ -23,9 +41,8 @@ export default function ArticlePage({ slug }: { slug: string }) {
     )
   }
 
-  const body = getBody(slug, lang)
   const otherLang = lang === "en" ? "zh" : "en"
-  const hasOther = getBody(slug, otherLang) !== null
+  const hasOther = hasBody(slug, otherLang)
 
   return (
     <article className="pt-28 pb-8">
@@ -87,7 +104,18 @@ export default function ArticlePage({ slug }: { slug: string }) {
 
         {/* 正文 */}
         <div className="mt-10">
-          {body ? (
+          {loading ? (
+            /* 正文下载中：占位几行灰条，避免页面高度突然跳动 */
+            <div className="space-y-4" aria-hidden="true">
+              {[...Array(6)].map((_, i) => (
+                <div
+                  key={i}
+                  className="h-4 bg-surface rounded"
+                  style={{ width: `${[100, 97, 99, 94, 98, 62][i]}%` }}
+                />
+              ))}
+            </div>
+          ) : body ? (
             <Markdown source={body} lang={lang} />
           ) : (
             <div className="bg-surface rounded-xl p-6">
