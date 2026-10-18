@@ -19,7 +19,7 @@ pnpm dev
    - `zh.md` —— 中文原文
    - `en.md` —— 英文译文（还没译好可以先不建，页面会显示「译文整理中」，并提供切到中文的入口）
 
-2. **登记元数据**：在 `src/data/articles.ts` 的 `articles` 数组**最前面**加一条。数组顺序就是列表页顺序。
+2. **登记元数据**：在 `src/data/articles.ts` 的 `entries` 数组里加一条，加在哪一行都行——列表页会按 `date` 字段从新到旧自动排序。记得填 2-3 个 `topics` 标签（一个大方向 + 一到两个具体领域，中英各一份）。
 
 3. **放封面图**（可选）：图片放在 `public/images/` 下，`cover` 字段写成 `/portfolio/images/你的文件名.png`（注意要带 `/portfolio` 前缀）。
 

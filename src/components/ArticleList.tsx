@@ -76,6 +76,17 @@ export default function ArticleList() {
                       <p className="text-sm text-ink-soft leading-relaxed mt-2 line-clamp-3">
                         {article.summary[lang]}
                       </p>
+                      {/* 关键词标签：第一个是大方向，其余是具体领域 */}
+                      <div className="flex flex-wrap gap-2 mt-3">
+                        {article.topics[lang].map((topic) => (
+                          <span
+                            key={topic}
+                            className="px-2.5 py-0.5 text-xs tracking-wider rounded-full bg-accent/10 text-accent"
+                          >
+                            {topic}
+                          </span>
+                        ))}
+                      </div>
                       <span className="inline-block text-sm text-accent mt-3 group-hover:underline">
                         {t.list.read}
                       </span>

@@ -78,9 +78,9 @@ export default function ArticlePage({ slug }: { slug: string }) {
                 {t.article.originalLink}
               </a>
             )}
-            {article.topics.length > 0 && (
+            {article.topics[lang].length > 0 && (
               <div className="flex flex-wrap gap-2">
-                {article.topics.map((topic) => (
+                {article.topics[lang].map((topic) => (
                   <span
                     key={topic}
                     className="px-2.5 py-0.5 text-xs tracking-wider rounded-full bg-accent/10 text-accent"

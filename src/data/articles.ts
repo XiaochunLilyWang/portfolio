@@ -22,11 +22,13 @@ export type Article = {
   cover?: string
   /** 原始发表链接 */
   originalLink?: string
-  /** 英文标签，用于归类展示 */
-  topics: string[]
+  /** 2-3 个关键词标签：一个大方向 + 一到两个具体领域。列表页和文章页都会显示 */
+  topics: Record<Lang, string[]>
 }
 
-export const articles: Article[] = [
+/* 这个数组的书写顺序无所谓，导出时统一按 date 从新到旧排序。
+   新增文章只要填对 date，不用管插在哪一行。 */
+const entries: Article[] = [
   {
     slug: "latepost-embodied-ai-q3-2026",
     title: {
@@ -45,7 +47,10 @@ export const articles: Article[] = [
     },
     cover: "/portfolio/images/latepost-embodied-q3.png",
     originalLink: "https://mp.weixin.qq.com/s/v8S1zgqh-B5SBzRYqCDPRA",
-    topics: ["AI", "Robotics", "Venture Capital"],
+    topics: {
+      en: ["AI", "Embodied AI", "Venture Capital"],
+      zh: ["AI", "具身智能", "一级市场"],
+    },
   },
   {
     slug: "latepost-ai-q3-2026",
@@ -65,7 +70,10 @@ export const articles: Article[] = [
     },
     cover: "/portfolio/images/latepost-ai-q3.png",
     originalLink: "https://mp.weixin.qq.com/s/lS0m51NO_R34RPU9Af1Emg",
-    topics: ["AI", "Interview", "Venture Capital"],
+    topics: {
+      en: ["AI", "Frontier Models", "AI Safety"],
+      zh: ["AI", "前沿模型", "AI 安全"],
+    },
   },
   {
     slug: "why-foldables",
@@ -79,7 +87,10 @@ export const articles: Article[] = [
     },
     cover: "/portfolio/images/why-foldables.png",
     originalLink: "https://mp.weixin.qq.com/s/-fGdHtHCir0PJ-miw9Ox0w",
-    topics: ["AI", "Hardware", "Consumer Tech"],
+    topics: {
+      en: ["AI", "Consumer Electronics", "On-Device AI"],
+      zh: ["AI", "消费电子", "端侧 AI"],
+    },
   },
   {
     slug: "ai-out-of-control",
@@ -96,7 +107,10 @@ export const articles: Article[] = [
     },
     cover: "/portfolio/images/ai-out-of-control.png",
     originalLink: "https://mp.weixin.qq.com/s/GdJL8418A4tQehJlrn8P5g",
-    topics: ["AI", "AI Safety", "Alignment"],
+    topics: {
+      en: ["AI", "AI Safety", "Alignment"],
+      zh: ["AI", "AI 安全", "对齐"],
+    },
   },
   {
     slug: "ai-hardware-six-trends",
@@ -113,7 +127,10 @@ export const articles: Article[] = [
     },
     cover: "/portfolio/images/ai-hardware-six-trends.png",
     originalLink: "https://mp.weixin.qq.com/s/srwvM80NxmRWirifkxJHcg",
-    topics: ["AI", "Hardware", "Consumer Tech"],
+    topics: {
+      en: ["AI", "AI Hardware", "Consumer Trends"],
+      zh: ["AI", "AI 硬件", "消费现象"],
+    },
   },
   {
     slug: "whos-on-xingye",
@@ -133,7 +150,10 @@ export const articles: Article[] = [
     },
     cover: "/portfolio/images/xingye-users.png",
     originalLink: "https://mp.weixin.qq.com/s/L8oUMwBht7GScn6z43ItVA",
-    topics: ["AI", "Human–AI Relationships", "Youth Culture"],
+    topics: {
+      en: ["AI", "AI Companionship", "Youth Culture"],
+      zh: ["AI", "AI 陪伴", "青年文化"],
+    },
   },
   {
     slug: "unmasking-ai-faces",
@@ -153,7 +173,10 @@ export const articles: Article[] = [
     },
     cover: "/portfolio/images/unmasking-ai-faces.png",
     originalLink: "https://www.cbnweek.com/article_detail/32100",
-    topics: ["AI", "Security", "Technology"],
+    topics: {
+      en: ["AI", "Deepfake", "Content Security"],
+      zh: ["AI", "Deepfake", "内容安全"],
+    },
   },
   {
     slug: "medical-companions",
@@ -173,7 +196,50 @@ export const articles: Article[] = [
     },
     cover: "/portfolio/images/peizhen-shengyi.png",
     originalLink: "https://tidenews.com.cn/news.html?id=2719325",
-    topics: ["Labour", "Healthcare", "Ageing"],
+    topics: {
+      en: ["Consumer Trends", "Ageing", "Gig Work"],
+      zh: ["消费现象", "老龄化", "零工经济"],
+    },
+  },
+  {
+    slug: "haiku-mogamigawa",
+    title: {
+      en: "\"Mogamigawa\": Why Have We Started Writing Haiku?",
+      zh: "「最上川」——我们为什么写起了俳句？",
+    },
+    outlet: { en: "Fudan Weekly", zh: "复旦人周报" },
+    date: "2025-05-01",
+    role: { en: "Editor", zh: "编辑" },
+    summary: {
+      en: "A Japanese form four hundred years old has become a meme in Chinese comment sections. Tracing the haiku from Bashō to Kerouac to the \"most XX\" format, and asking why this form, and not Song ci, set off a wave of mass composition.",
+      zh: "一种四百年历史的日本诗体，成了中文评论区的网络模因。从松尾芭蕉到凯鲁亚克再到「最 XX」格式，以及一个问题：为什么掀起全民创作的是俳句，而不是宋词。",
+    },
+    cover: "/portfolio/images/haiku-mogamigawa.png",
+    originalLink: "https://mp.weixin.qq.com/s/yHRRyB1v7nbZR0PGTr7z8w",
+    topics: {
+      en: ["Youth Culture", "Internet Culture", "Literature"],
+      zh: ["青年文化", "网络文化", "文学"],
+    },
+  },
+  {
+    slug: "fudaners-living-with-ai",
+    title: {
+      en: "Fudaners Living with AI",
+      zh: "与 AI 共处的复旦人",
+    },
+    outlet: { en: "Fudan Weekly", zh: "复旦人周报" },
+    date: "2025-03-16",
+    role: { en: "Editor", zh: "编辑" },
+    summary: {
+      en: "Of 105 Fudan students surveyed, 51 use AI every day. What they use it for, where it starts steering their thinking instead of supporting it, and how the first Chinese university rules on AI in theses landed on campus.",
+      zh: "受访的 105 位复旦学生中，51 人每天都用 AI。他们用它做什么，它从什么时候开始带着他们的思路走，以及国内高校第一份毕业论文 AI 使用规定落到校园里之后发生了什么。",
+    },
+    cover: "/portfolio/images/fudanren-ai.png",
+    originalLink: "https://mp.weixin.qq.com/s/gnoRcCRh9YvtIjfeqUqERA",
+    topics: {
+      en: ["AI", "Youth Culture", "Higher Education"],
+      zh: ["AI", "青年文化", "高等教育"],
+    },
   },
   {
     slug: "bank-deposit-grey-chain",
@@ -193,9 +259,17 @@ export const articles: Article[] = [
     },
     cover: "/portfolio/images/bank-grey-chain.png",
     originalLink: "https://mp.weixin.qq.com/s/Rk8Ks8K1CBVZ2VPzPNFI8A",
-    topics: ["Finance", "Platforms", "Investigation"],
+    topics: {
+      en: ["Finance", "Platform Governance", "Investigation"],
+      zh: ["金融", "平台治理", "调查报道"],
+    },
   },
 ]
+
+/** 列表页和路由都用这一份：按发表日期从新到旧 */
+export const articles: Article[] = [...entries].sort((a, b) =>
+  b.date.localeCompare(a.date),
+)
 
 /* ---- 正文加载 ----
    不用 eager：每篇正文各自打成一个 chunk，点进文章才下载。
