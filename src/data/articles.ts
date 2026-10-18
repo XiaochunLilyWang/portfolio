@@ -28,14 +28,54 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "latepost-embodied-ai-q3-2026",
+    title: {
+      en: "LatePost Embodied AI Quarterly: After Astra, Will General Models Eat Robotics?",
+      zh: "晚点具身季报：Astra 冲击后，通用模型会吃掉 Robotics 吗？",
+    },
+    outlet: { en: "LatePost", zh: "晚点 LatePost" },
+    date: "2026-10-15",
+    role: {
+      en: "Interview editing and writing",
+      zh: "参与整理访谈与撰稿",
+    },
+    summary: {
+      en: "A general-purpose multimodal model turned out to be able to do part of a robot policy model's job — and in some tasks, do it better. An interview with Alphaist founding partner Chen Zhe on what that does to the story independent embodied-AI companies have been telling.",
+      zh: "通用多模态基础模型居然可以直接做机器人策略模型的部分工作，部分任务的成功率甚至更高。对话 Alphaist 创始合伙人陈哲：这动摇了独立具身智能公司的叙事和估值底座吗？",
+    },
+    cover: "/portfolio/images/latepost-embodied-q3.png",
+    originalLink: "https://mp.weixin.qq.com/s/v8S1zgqh-B5SBzRYqCDPRA",
+    topics: ["AI", "Robotics", "Venture Capital"],
+  },
+  {
+    slug: "latepost-ai-q3-2026",
+    title: {
+      en: "LatePost AI Quarterly: Muse Ignites Personal Assistants, Astra Moves into Robotics, OpenAI's Revenue Surges",
+      zh: "晚点 AI 季报：Muse 引爆个人助理，Astra 走进机器人，OpenAI 收入猛增",
+    },
+    outlet: { en: "LatePost", zh: "晚点 LatePost" },
+    date: "2026-09-30",
+    role: {
+      en: "Interview editing and writing",
+      zh: "参与整理访谈与撰稿",
+    },
+    summary: {
+      en: "The quarter's AI review, along two threads: advancing the intelligence frontier, and the diffusion of intelligence. An interview with MoE Capital founding partner Henry Yin on the model race, a serious agent containment failure at OpenAI, and the return of consumer AI.",
+      zh: "沿「推进智能前沿」与「智能的扩散」两条脉络回顾本季。对话 MoE Capital 创始合伙人 Henry Yin：模型竞赛、OpenAI 一起严重的 agent 失控事故，以及个人 AI 助理热潮的卷土重来。",
+    },
+    cover: "/portfolio/images/latepost-ai-q3.png",
+    originalLink: "https://mp.weixin.qq.com/s/lS0m51NO_R34RPU9Af1Emg",
+    topics: ["AI", "Interview", "Venture Capital"],
+  },
+  {
     slug: "whos-on-xingye",
     title: {
       en: "Who's on Xingye?",
       zh: "谁在使用星野？",
     },
     outlet: {
-      en: "NewNewThing (CBN)",
-      zh: "新皮层 NewNewThing（第一财经）",
+      en: "CBN Weekly",
+      zh: "第一财经杂志",
     },
     date: "2024-12-18",
     role: { en: "Contributing reporter", zh: "参与采访写作" },
