@@ -38,6 +38,7 @@ const en = {
     outletLabel: "Published in",
     roleLabel: "My role",
     dateLabel: "Date",
+    englishOriginal: "Written in English",
   },
   footer: {
     backToTop: "Back to top ↑",
@@ -79,6 +80,7 @@ const zh: typeof en = {
     outletLabel: "发表于",
     roleLabel: "我的角色",
     dateLabel: "时间",
+    englishOriginal: "英文原创",
   },
   footer: {
     backToTop: "回到顶部 ↑",

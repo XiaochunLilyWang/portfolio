@@ -69,6 +69,12 @@ export default function ArticleList() {
                         {formatDate(article.date, lang)} · {article.outlet[lang]}
                         {" · "}
                         {article.role[lang]}
+                        {/* 英文原创是这个作品集里的少数，单独打标 */}
+                        {article.originalLanguage === "en" && (
+                          <span className="ml-2 px-2 py-0.5 border border-accent/40 text-accent rounded-full">
+                            {t.article.englishOriginal}
+                          </span>
+                        )}
                       </p>
                       <h3 className="text-lg text-ink font-semibold leading-snug group-hover:text-accent transition-colors">
                         {article.title[lang]}

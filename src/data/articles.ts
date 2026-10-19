@@ -24,11 +24,35 @@ export type Article = {
   originalLink?: string
   /** 2-3 个关键词标签：一个大方向 + 一到两个具体领域。列表页和文章页都会显示 */
   topics: Record<Lang, string[]>
+  /** 发表时的原文语种。省略视为中文原创；英文原创的会在列表和文章页打标 */
+  originalLanguage?: Lang
 }
 
 /* 这个数组的书写顺序无所谓，导出时统一按 date 从新到旧排序。
    新增文章只要填对 date，不用管插在哪一行。 */
 const entries: Article[] = [
+  {
+    slug: "east-china-fair-foreign-trade",
+    title: {
+      en: "China Focus: Chinese Foreign Trade Companies Ascending Value Chain Through Innovation",
+      zh: "中国聚焦：中国外贸企业以创新向价值链上游攀升",
+    },
+    outlet: { en: "Xinhua News Agency", zh: "新华社" },
+    date: "2023-07-17",
+    role: { en: "Reporter", zh: "记者" },
+    originalLanguage: "en",
+    summary: {
+      en: "The East China Fair returned offline after three years, and the exhibitors had changed: silk woven with collagen-modified nylon, a 1.28-billion-yuan \"Industry 4.0\" blanket factory. Reported from the floor of China's self-described barometer of foreign trade.",
+      zh: "华交会时隔三年重回线下，展台上的东西变了：胶原蛋白改性锦纶与真丝交织的面料、投资 12.8 亿元的「工业 4.0」毛毯工厂。来自这场「外贸晴雨表」的现场报道。",
+    },
+    cover: "/portfolio/images/east-china-fair.png",
+    originalLink:
+      "https://xhnewsapi.xinhuaxmt.com/share/news_pc?id=845350046040064&showType=3001&version=3.1.4",
+    topics: {
+      en: ["Foreign Trade", "Manufacturing", "Chinese Economy"],
+      zh: ["外贸", "制造业", "中国经济"],
+    },
+  },
   {
     slug: "latepost-embodied-ai-q3-2026",
     title: {

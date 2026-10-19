@@ -59,6 +59,11 @@ export default function ArticlePage({ slug }: { slug: string }) {
           <p className="text-xs text-ink-faint tracking-wider mb-3">
             {formatDate(article.date, lang)} · {article.outlet[lang]} ·{" "}
             {article.role[lang]}
+            {article.originalLanguage === "en" && (
+              <span className="ml-2 px-2 py-0.5 border border-accent/40 text-accent rounded-full">
+                {t.article.englishOriginal}
+              </span>
+            )}
           </p>
           <h1 className="text-3xl md:text-4xl text-ink font-semibold leading-snug">
             {article.title[lang]}
