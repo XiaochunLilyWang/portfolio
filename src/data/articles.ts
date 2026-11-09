@@ -39,7 +39,10 @@ const entries: Article[] = [
     },
     outlet: { en: "LatePost", zh: "晚点 LatePost" },
     date: "2026-11-03",
-    role: { en: "Interview editing", zh: "访谈整理" },
+    role: {
+      en: "Interview editing and writing",
+      zh: "参与整理访谈与撰稿",
+    },
     summary: {
       en: "$895.4 billion in committed compute against quarter-on-quarter revenue growth that fell from 144% to 47%. Two investors take apart the filing line by line — finance-lease accounting, a 900% NRR on a low base, and the one number that will set the price.",
       zh: "8954 亿美元的算力承诺，对上环比增速从 144% 掉到 47%。两位投资人逐条拆解这份招股书：被挪进筹资活动的现金流、低基数上的 900% NRR，以及那个将决定定价的、还没披露的数字。",
