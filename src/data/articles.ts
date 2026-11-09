@@ -32,6 +32,26 @@ export type Article = {
    新增文章只要填对 date，不用管插在哪一行。 */
 const entries: Article[] = [
   {
+    slug: "anthropic-s1-investors",
+    title: {
+      en: "Reading Anthropic's S-1 with a Public- and a Private-Markets Investor: The Bubble, Slowing Growth, and What Comes After Coding",
+      zh: "与一、二级投资人聊 Anthropic 招股书：泡沫、增速下滑和 coding 之后是什么",
+    },
+    outlet: { en: "LatePost", zh: "晚点 LatePost" },
+    date: "2026-11-03",
+    role: { en: "Interview editing", zh: "访谈整理" },
+    summary: {
+      en: "$895.4 billion in committed compute against quarter-on-quarter revenue growth that fell from 144% to 47%. Two investors take apart the filing line by line — finance-lease accounting, a 900% NRR on a low base, and the one number that will set the price.",
+      zh: "8954 亿美元的算力承诺，对上环比增速从 144% 掉到 47%。两位投资人逐条拆解这份招股书：被挪进筹资活动的现金流、低基数上的 900% NRR，以及那个将决定定价的、还没披露的数字。",
+    },
+    cover: "/portfolio/images/anthropic-s1.png",
+    originalLink: "https://mp.weixin.qq.com/s/MvxVt8OGTgvaj33duWZK9Q",
+    topics: {
+      en: ["AI", "Capital Markets", "IPO"],
+      zh: ["AI", "资本市场", "IPO"],
+    },
+  },
+  {
     slug: "east-china-fair-foreign-trade",
     title: {
       en: "China Focus: Chinese Foreign Trade Companies Ascending Value Chain Through Innovation",
